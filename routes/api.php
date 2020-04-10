@@ -19,3 +19,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('generate_stops', 'GTFSRoutesController@generate_stops');
+Route::get('get_first', 'GTFSRoutesController@get_from_model');
+
+// Agencies Controller
+Route::get('Agency/get_by_id', 'Agencies@get_by_id');
+Route::post('Agency/add_agency', 'Agencies@add');

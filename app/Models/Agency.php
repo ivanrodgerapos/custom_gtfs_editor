@@ -22,10 +22,52 @@ class Agency extends Model
 
     function get_by_id ($data) {
         
-        return Agency::where('id', $data['id'])
+        return $this
+                ->select('agency_id AS id',
+                        'agency_name AS name',
+                        'agency_url AS url',
+                        'agency_lang AS lang',
+                        'agency_phone AS phone',
+                        'agency_email AS email',
+                        'agency_timezone AS timezone',
+                        'agency_fare_url AS fare_url',
+                        'agency_branding_url AS branding_url')
+                ->where('id', $data['id'])
                 ->orderBy('id', 'asc')
                 ->take(1)
                 ->get();
+    }
+
+    function get_all  () {
+        return $this
+            ->select('agency_id AS id',
+                    'agency_name AS name',
+                    'agency_url AS url',
+                    'agency_lang AS lang',
+                    'agency_phone AS phone',
+                    'agency_email AS email',
+                    'agency_timezone AS timezone',
+                    'agency_fare_url AS fare_url',
+                    'agency_branding_url AS branding_url')
+            ->get();
+    }
+
+    function update_agency_by_id ($data) {
+        return $this
+            ->where('id', $data['id'])
+            ->update(['agency_id' => $data['agency'],
+                    'agency_name' => $data['name'],
+                    'agency_url' => $data['url'],
+                    'agency_lang' => $data['lang'],
+                    'agency_phone' => $data['phone'],
+                    'agency_email' => $data['email'],
+                    'agency_timezone' => $data['timezone'],
+                    'agency_fare_url' => $data['fare_url'],
+                    'agency_branding_url' => $data['branding_url']]);
+    }
+
+    function check_if_agency_exists ($id) {
+        return $this->where('id', $id)->exists();
     }
 
     public static function instance() {

@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "befef441-206c-4bba-81f1-e2cd850f57f0",
+		"name": "Calendars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Calendar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "50a08b1b-e2b2-484c-9cc3-e9a92549e526",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "name",
+						"value": "Webster",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "LTFRB",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "LTFRB",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "http://www.ltfrb.gov.p",
+							"type": "text"
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Manila",
+							"type": "text"
+						},
+						{
+							"key": "fare_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "branding_url",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Agency/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Agency",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Calendar",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "agency",
+							"value": "LTFRBEE",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "LTFRBEES",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "http://www.ltfrb.gov.p",
+							"type": "text"
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Manila",
+							"type": "text"
+						},
+						{
+							"key": "fare_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "branding_url",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Agency/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Agency",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Calendar",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Agency/fetch_all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Agency",
+						"fetch_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Calendar By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Agency/fetch_by_id?id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Agency",
+						"fetch_by_id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

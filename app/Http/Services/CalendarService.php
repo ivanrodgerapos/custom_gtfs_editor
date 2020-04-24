@@ -2,18 +2,18 @@
 namespace App\Http\Services;
 
 use Illuminate\Http\Request;
-use App\Models\Agency;
+use App\Models\Calendar;
 use Exception;
 
-class AgencyService 
+class CalendarService 
 {
-    public static function add_agency($request) {
+    public static function add_calendar($request) {
         $data = $request->input();
 
         try {
-            $result = Agency::instance()->add($data);
+            $result = Calendar::instance()->add($data);
             $data = $result ? "Success" : "Failed";
-        } 
+        }
         catch (Exception $e) {
             $data = $e->getMessage();
         }
@@ -21,13 +21,13 @@ class AgencyService
         return $data;
     }
 
-    public static function get_agency_by_id ($request) {
-        $data = $request->input();
+    public static function get_calendar_by_id ($request) {
+        $id = $request->input('id');
 
         try {
-            $result = Agency::instance()->get_by_id($data);
+            $result = Calendar::instance()->get_by_id($id);
             $data = $result ? $result : "Failed";
-        } 
+        }
         catch (Exception $e) {
             $data = $e->getMessage();
         }
@@ -35,11 +35,11 @@ class AgencyService
         return $data;
     }
 
-    public static function get_all_agency () {
+    public static function get_all_calendar () {
         try {
-            $result = Agency::instance()->get_all();
+            $result = Calendar::instance()->get_all();
             $data = $result ? $result : "Failed";
-        } 
+        }
         catch (Exception $e) {
             $data = $e->getMessage();
         }
@@ -47,22 +47,23 @@ class AgencyService
         return $data;
     }
 
-    public static function update_agency_by_id ($request) {
+    public static function update_calendar_by_id ($request) {
         $data = $request->input();
-        $id = $data['id'];
+        $has_req = $request->has('id');
+        $id = isset($data['id']) ? $data['id'] : '0';
 
         try {
-            $record_exists = self::check_agency_exists($id);
+            $record_exists = self::check_calendar_exists($id);
 
             if ($record_exists) {
-                $result = Agency::instance()->update_agency_by_id($data);
+                $result = Calendar::instance()->update_calendar_by_id($data);
                 $data = $result ? "Success" : "Failed";
             }
             else {
                 $data = "Record does not exist.";
             }
             
-        } 
+        }
         catch (Exception $e) {
             $data = $e->getMessage();
         }
@@ -70,7 +71,7 @@ class AgencyService
         return $data;
     }
 
-    private static function check_agency_exists ($id) {
-        return Agency::instance()->check_if_agency_exists($id);
+    private static function check_calendar_exists ($id) {
+        return Calendar::instance()->check_if_calendar_exists($id);
     }
 }

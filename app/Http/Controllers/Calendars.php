@@ -4,37 +4,35 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\CommonHelper;
-use App\Http\Services\AgencyService;
+use App\Http\Services\CalendarService;
 
-class Agencies extends Controller
+class Calendars extends Controller
 {
-    // Add
+    //// Add
     function add (Request $request) {
-        $response = AgencyService::add_agency($request);
+        $response = CalendarService::add_calendar($request);
         
         return CommonHelper::instance()->responseHelper($response);
     }
 
     // Get By Id
     function get_by_id (Request $request) {
-        $response = AgencyService::get_agency_by_id($request);
+        $response = CalendarService::get_calendar_by_id($request);
         
         return CommonHelper::instance()->responseHelper($response);
     }
 
     // Get All
     function get_all () {
-        $response = AgencyService::get_all_agency();
+        $response = CalendarService::get_all_calendar();
 
         return CommonHelper::instance()->responseHelper($response);
     }
 
     // Update
     function update_by_id(Request $request) {
-        $response = AgencyService::update_agency_by_id($request);
+        $response = CalendarService::update_calendar_by_id($request);
 
         return CommonHelper::instance()->responseHelper($response);
     }
-
-    // Delete
 }

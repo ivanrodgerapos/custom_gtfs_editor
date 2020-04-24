@@ -22,5 +22,13 @@ Route::get('generate_stops', 'GTFSRoutesController@generate_stops');
 Route::get('get_first', 'GTFSRoutesController@get_from_model');
 
 // Agencies Controller
-Route::get('Agency/get_by_id', 'Agencies@get_by_id');
-Route::post('Agency/add_agency', 'Agencies@add');
+Route::get('Agency/fetch_by_id', 'Agencies@get_by_id');
+Route::get('Agency/fetch_all', 'Agencies@get_all');
+Route::post('Agency/create', 'Agencies@add');
+Route::post('Agency/edit', 'Agencies@update_by_id');
+
+// Calendars Controller
+Route::get('Calendar/fetch_by_id', 'Calendars@get_by_id');
+Route::get('Calendar/fetch_all', 'Calendars@get_all');
+Route::post('Calendar/create', 'Calendars@add');
+Route::post('Calendar/edit', 'Calendars@update_by_id');

@@ -4,34 +4,34 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Helpers\CommonHelper;
-use App\Http\Services\CalendarService;
+use App\Http\Services\FrequencyService;
 
-class Calendars extends Controller
+class Frequencies extends Controller
 {
     // Add
     function add (Request $request) {
-        $response = CalendarService::add_calendar($request);
+        $response = FrequencyService::add_frequency($request);
         
         return CommonHelper::instance()->responseHelper($response);
     }
 
     // Get By Id
     function get_by_id (Request $request) {
-        $response = CalendarService::get_calendar_by_id($request);
+        $response = FrequencyService::get_frequency_by_id($request);
         
         return CommonHelper::instance()->responseHelper($response);
     }
 
     // Get All
     function get_all () {
-        $response = CalendarService::get_all_calendar();
+        $response = FrequencyService::get_all_frequency();
 
         return CommonHelper::instance()->responseHelper($response);
     }
 
     // Update
     function update_by_id(Request $request) {
-        $response = CalendarService::update_calendar_by_id($request);
+        $response = FrequencyService::update_frequency_by_id($request);
 
         return CommonHelper::instance()->responseHelper($response);
     }

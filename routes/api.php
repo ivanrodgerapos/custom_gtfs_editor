@@ -32,3 +32,9 @@ Route::get('Calendar/fetch_by_id', 'Calendars@get_by_id');
 Route::get('Calendar/fetch_all', 'Calendars@get_all');
 Route::post('Calendar/create', 'Calendars@add');
 Route::post('Calendar/edit', 'Calendars@update_by_id');
+
+//Frequencies Controller
+Route::get('Frequency/fetch_by_id', 'Frequencies@get_by_id');
+Route::get('Frequency/fetch_all', 'Frequencies@get_all');
+Route::post('Frequency/create', 'Frequencies@add');
+Route::post('Frequency/edit', 'Frequencies@update_by_id');

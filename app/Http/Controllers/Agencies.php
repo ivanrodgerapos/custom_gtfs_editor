@@ -12,28 +12,28 @@ class Agencies extends Controller
     function add (Request $request) {
         $response = AgencyService::add_agency($request);
         
-        return CommonHelper::instance()->responseHelper($response);
+        return CommonHelper::responseHelper($response);
     }
 
     // Get By Id
     function get_by_id (Request $request) {
         $response = AgencyService::get_agency_by_id($request);
         
-        return CommonHelper::instance()->responseHelper($response);
+        return CommonHelper::responseHelper($response);
     }
 
     // Get All
     function get_all () {
         $response = AgencyService::get_all_agency();
 
-        return CommonHelper::instance()->responseHelper($response);
+        return CommonHelper::responseHelper($response);
     }
 
     // Update
     function update_by_id(Request $request) {
         $response = AgencyService::update_agency_by_id($request);
 
-        return CommonHelper::instance()->responseHelper($response);
+        return CommonHelper::responseHelper($response);
     }
 
     // Delete

@@ -2,16 +2,16 @@
 namespace App\Http\Services;
 
 use Illuminate\Http\Request;
-use App\Models\Calendar;
+use App\Models\Route;
 use Exception;
 
-class CalendarService 
+class RouteService
 {
-    public static function add_calendar($request) {
+    public static function add_route($request) {
         $data = $request->input();
 
         try {
-            $result = Calendar::instance()->add($data);
+            $result = Route::instance()->add($data);
             $data = $result ? "Success" : "Failed";
         }
         catch (Exception $e) {
@@ -21,30 +21,11 @@ class CalendarService
         return $data;
     }
 
-    public static function get_calendar_by_id ($request) {
+    public static function get_route_by_id ($request) {
         $id = $request->input('id');
 
         try {
-            $record_exists = self::check_calendar_exists($id);
-
-            if ($record_exists) {
-                $result = Calendar::instance()->get_by_id($id);
-                $data = $result ? $result : "Failed";
-            }
-            else {
-                $data = "Record does not exist.";
-            }
-        }
-        catch (Exception $e) {
-            $data = $e->getMessage();
-        }
-
-        return $data;
-    }
-
-    public static function get_all_calendar () {
-        try {
-            $result = Calendar::instance()->get_all();
+            $result = Route::instance()->get_by_id($id);
             $data = $result ? $result : "Failed";
         }
         catch (Exception $e) {
@@ -54,16 +35,28 @@ class CalendarService
         return $data;
     }
 
-    public static function update_calendar_by_id ($request) {
+    public static function get_all_route () {
+        try {
+            $result = Route::instance()->get_all();
+            $data = $result ? $result : "Failed";
+        }
+        catch (Exception $e) {
+            $data = $e->getMessage();
+        }
+
+        return $data;
+    }
+
+    public static function update_route_by_id ($request) {
         $data = $request->input();
         $has_req = $request->has('id');
         $id = isset($data['id']) ? $data['id'] : '0';
 
         try {
-            $record_exists = self::check_calendar_exists($id);
+            $record_exists = self::check_route_exists($id);
 
             if ($record_exists) {
-                $result = Calendar::instance()->update_calendar_by_id($data);
+                $result = Route::instance()->update_route_by_id($data);
                 $data = $result ? "Success" : "Failed";
             }
             else {
@@ -78,7 +71,7 @@ class CalendarService
         return $data;
     }
 
-    private static function check_calendar_exists ($id) {
-        return Calendar::instance()->check_if_calendar_exists($id);
+    private static function check_route_exists ($id) {
+        return Route::instance()->check_if_route_exists($id);
     }
 }

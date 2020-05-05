@@ -43,54 +43,34 @@
 					"mode": "formdata",
 					"formdata": [
 						{
-							"key": "id",
-							"value": "LTFRB",
+							"key": "trip",
+							"value": "inb01c",
 							"type": "text"
 						},
 						{
-							"key": "name",
-							"value": "LTFRB",
+							"key": "time_start",
+							"value": "00:00:00",
 							"type": "text"
 						},
 						{
-							"key": "url",
-							"value": "http://www.ltfrb.gov.p",
+							"key": "time_end",
+							"value": "23:59:59",
 							"type": "text"
 						},
 						{
-							"key": "lang",
-							"value": "en",
+							"key": "headway",
+							"value": "600",
 							"type": "text"
 						},
 						{
-							"key": "phone",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "timezone",
-							"value": "Asia/Manila",
-							"type": "text"
-						},
-						{
-							"key": "fare_url",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "branding_url",
-							"value": "",
+							"key": "exact_time",
+							"value": "0",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/Agency/create",
+					"raw": "http://127.0.0.1:8000/api/Frequency/create",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -101,7 +81,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"Agency",
+						"Frequency",
 						"create"
 					]
 				}
@@ -117,59 +97,39 @@
 					"mode": "formdata",
 					"formdata": [
 						{
+							"key": "trip",
+							"value": "inb01cd",
+							"type": "text"
+						},
+						{
+							"key": "time_start",
+							"value": "00:00:00",
+							"type": "text"
+						},
+						{
+							"key": "time_end",
+							"value": "23:59:59",
+							"type": "text"
+						},
+						{
+							"key": "headway",
+							"value": "600",
+							"type": "text"
+						},
+						{
+							"key": "exact_time",
+							"value": "0",
+							"type": "text"
+						},
+						{
 							"key": "id",
-							"value": "10",
-							"type": "text"
-						},
-						{
-							"key": "agency",
-							"value": "LTFRBEE",
-							"type": "text"
-						},
-						{
-							"key": "name",
-							"value": "LTFRBEES",
-							"type": "text"
-						},
-						{
-							"key": "url",
-							"value": "http://www.ltfrb.gov.p",
-							"type": "text"
-						},
-						{
-							"key": "lang",
-							"value": "en",
-							"type": "text"
-						},
-						{
-							"key": "phone",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "email",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "timezone",
-							"value": "Asia/Manila",
-							"type": "text"
-						},
-						{
-							"key": "fare_url",
-							"value": "",
-							"type": "text"
-						},
-						{
-							"key": "branding_url",
-							"value": "",
+							"value": "4",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/Agency/edit",
+					"raw": "http://127.0.0.1:8000/api/Frequency/edit",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -180,7 +140,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"Agency",
+						"Frequency",
 						"edit"
 					]
 				}
@@ -197,7 +157,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/Agency/fetch_all",
+					"raw": "http://127.0.0.1:8000/api/Frequency/fetch_all",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -208,7 +168,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"Agency",
+						"Frequency",
 						"fetch_all"
 					]
 				}
@@ -225,7 +185,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/Agency/fetch_by_id?id=1",
+					"raw": "http://127.0.0.1:8000/api/Frequency/fetch_by_id?id=2",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -236,13 +196,13 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"Agency",
+						"Frequency",
 						"fetch_by_id"
 					],
 					"query": [
 						{
 							"key": "id",
-							"value": "1"
+							"value": "2"
 						}
 					]
 				}

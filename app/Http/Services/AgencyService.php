@@ -22,11 +22,18 @@ class AgencyService
     }
 
     public static function get_agency_by_id ($request) {
-        $data = $request->input();
+        $id = $request->input('id');
 
         try {
-            $result = Agency::instance()->get_by_id($data);
-            $data = $result ? $result : "Failed";
+            $record_exists = self::check_agency_exists($id);
+
+            if ($record_exists) {
+                $result = Agency::instance()->get_by_id($id);
+                $data = $result ? $result : "Failed";
+            }
+            else {
+                $data = "Record does not exist.";
+            }
         } 
         catch (Exception $e) {
             $data = $e->getMessage();

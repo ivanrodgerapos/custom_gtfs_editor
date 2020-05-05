@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "befef441-206c-4bba-81f1-e2cd850f57f0",
-		"name": "Calendars",
+		"_postman_id": "d7e1d132-fb24-476c-b511-bae26ae63534",
+		"name": "Routes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Add Calendar",
+			"name": "Add Route",
 			"event": [
 				{
 					"listen": "test",
@@ -43,59 +43,59 @@
 					"mode": "formdata",
 					"formdata": [
 						{
-							"key": "service",
-							"value": "571b24dbafc8",
+							"key": "agency",
+							"value": "LTFRB",
 							"type": "text"
 						},
 						{
-							"key": "mon",
-							"value": "1",
+							"key": "route",
+							"value": "01C",
 							"type": "text"
 						},
 						{
-							"key": "tue",
-							"value": "1",
+							"key": "short_name",
+							"value": "01C",
 							"type": "text"
 						},
 						{
-							"key": "wed",
-							"value": "1",
+							"key": "long_name",
+							"value": "01C",
 							"type": "text"
 						},
 						{
-							"key": "thu",
-							"value": "1",
+							"key": "desc",
+							"value": "",
 							"type": "text"
 						},
 						{
-							"key": "fri",
-							"value": "1",
+							"key": "type",
+							"value": "3",
 							"type": "text"
 						},
 						{
-							"key": "sat",
-							"value": "1",
+							"key": "url",
+							"value": "",
 							"type": "text"
 						},
 						{
-							"key": "sun",
-							"value": "1",
+							"key": "color",
+							"value": "112F95",
 							"type": "text"
 						},
 						{
-							"key": "date_start",
-							"value": "20180101",
+							"key": "text_color",
+							"value": "000000",
 							"type": "text"
 						},
 						{
-							"key": "date_end",
-							"value": "20201231",
+							"key": "branding_url",
+							"value": "",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/Calendar/create",
+					"raw": "http://127.0.0.1:8000/api/Route/create",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -106,7 +106,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"Calendar",
+						"Route",
 						"create"
 					]
 				}
@@ -114,7 +114,7 @@
 			"response": []
 		},
 		{
-			"name": "Edit Calendar",
+			"name": "Edit Route",
 			"request": {
 				"method": "POST",
 				"header": [],
@@ -122,64 +122,64 @@
 					"mode": "formdata",
 					"formdata": [
 						{
+							"key": "agency",
+							"value": "LTFRBDE",
+							"type": "text"
+						},
+						{
+							"key": "route",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "short_name",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "long_name",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "desc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "112F95",
+							"type": "text"
+						},
+						{
+							"key": "text_color",
+							"value": "000000",
+							"type": "text"
+						},
+						{
+							"key": "branding_url",
+							"value": "",
+							"type": "text"
+						},
+						{
 							"key": "id",
 							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "service",
-							"value": "571b24dbafc8",
-							"type": "text"
-						},
-						{
-							"key": "mon",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "tue",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "wed",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "thu",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "fri",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "sat",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "sun",
-							"value": "1",
-							"type": "text"
-						},
-						{
-							"key": "date_start",
-							"value": "20180101",
-							"type": "text"
-						},
-						{
-							"key": "date_end",
-							"value": "20201231",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/Calendar/edit",
+					"raw": "http://127.0.0.1:8000/api/Route/edit",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -190,7 +190,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"Calendar",
+						"Route",
 						"edit"
 					]
 				}
@@ -198,7 +198,7 @@
 			"response": []
 		},
 		{
-			"name": "Get All Calendar",
+			"name": "Get All Route",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -207,7 +207,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/Calendar/fetch_all",
+					"raw": "http://127.0.0.1:8000/api/Route/fetch_all",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -218,7 +218,7 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"Calendar",
+						"Route",
 						"fetch_all"
 					]
 				}
@@ -226,7 +226,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Calendar By ID",
+			"name": "Get Route By ID",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -235,7 +235,7 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://127.0.0.1:8000/api/Calendar/fetch_by_id?id=1",
+					"raw": "http://127.0.0.1:8000/api/Route/fetch_by_id?id=2",
 					"protocol": "http",
 					"host": [
 						"127",
@@ -246,13 +246,13 @@
 					"port": "8000",
 					"path": [
 						"api",
-						"Calendar",
+						"Route",
 						"fetch_by_id"
 					],
 					"query": [
 						{
 							"key": "id",
-							"value": "1"
+							"value": "2"
 						}
 					]
 				}

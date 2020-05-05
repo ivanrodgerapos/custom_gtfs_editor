@@ -34,7 +34,7 @@ class CreateRoutesTable extends Migration
             // route_text_color
             $table->string('route_text_color', 25);
             // route_branding_url
-            $table->string('route_branding_url');
+            $table->string('route_branding_url')->nullable();
             // timestamps
             $table->timestamps();
         });

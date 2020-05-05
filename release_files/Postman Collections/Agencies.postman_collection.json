@@ -24,21 +24,7 @@
 					"type": "noauth"
 				},
 				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text",
-						"disabled": true
-					},
-					{
-						"key": "name",
-						"value": "Webster",
-						"type": "text",
-						"disabled": true
-					}
-				],
+				"header": [],
 				"body": {
 					"mode": "formdata",
 					"formdata": [
@@ -118,7 +104,7 @@
 					"formdata": [
 						{
 							"key": "id",
-							"value": "10",
+							"value": "1",
 							"type": "text"
 						},
 						{

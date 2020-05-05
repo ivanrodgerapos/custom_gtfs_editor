@@ -25,8 +25,15 @@ class FrequencyService
         $id = $request->input('id');
 
         try {
-            $result = Frequency::instance()->get_by_id($id);
-            $data = $result ? $result : "Failed";
+            $record_exists = self::check_frequency_exists($id);
+
+            if ($record_exists) {
+                $result = Frequency::instance()->get_by_id($id);
+                $data = $result ? $result : "Failed";
+            }
+            else {
+                $data = "Record does not exist.";
+            }
         }
         catch (Exception $e) {
             $data = $e->getMessage();

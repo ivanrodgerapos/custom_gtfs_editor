@@ -12,27 +12,27 @@ class Calendars extends Controller
     function add (Request $request) {
         $response = CalendarService::add_calendar($request);
         
-        return CommonHelper::instance()->responseHelper($response);
+        return CommonHelper::responseHelper($response);
     }
 
     // Get By Id
     function get_by_id (Request $request) {
         $response = CalendarService::get_calendar_by_id($request);
         
-        return CommonHelper::instance()->responseHelper($response);
+        return CommonHelper::responseHelper($response);
     }
 
     // Get All
     function get_all () {
         $response = CalendarService::get_all_calendar();
 
-        return CommonHelper::instance()->responseHelper($response);
+        return CommonHelper::responseHelper($response);
     }
 
     // Update
     function update_by_id(Request $request) {
         $response = CalendarService::update_calendar_by_id($request);
 
-        return CommonHelper::instance()->responseHelper($response);
+        return CommonHelper::responseHelper($response);
     }
 }

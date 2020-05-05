@@ -3,7 +3,7 @@ namespace App\Helpers;
 
 class CommonHelper
 {
-    public function responseHelper($data)
+    public static function responseHelper($data)
     {   
         $response = "";
 
@@ -14,8 +14,4 @@ class CommonHelper
         return $response;
     }
 
-    public static function instance()
-     {
-         return new CommonHelper();
-     }
 }

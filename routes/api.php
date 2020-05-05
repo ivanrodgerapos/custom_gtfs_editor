@@ -38,3 +38,9 @@ Route::get('Frequency/fetch_by_id', 'Frequencies@get_by_id');
 Route::get('Frequency/fetch_all', 'Frequencies@get_all');
 Route::post('Frequency/create', 'Frequencies@add');
 Route::post('Frequency/edit', 'Frequencies@update_by_id');
+
+//Routes Controller
+Route::get('Route/fetch_by_id', 'Routes@get_by_id');
+Route::get('Route/fetch_all', 'Routes@get_all');
+Route::post('Route/create', 'Routes@add');
+Route::post('Route/edit', 'Routes@update_by_id');

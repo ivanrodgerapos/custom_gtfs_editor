@@ -20,7 +20,7 @@ class Agency extends Model
         return $this->save();
     }
 
-    function get_by_id ($data) {
+    function get_by_id ($id) {
         
         return $this
                 ->select('agency_id AS id',
@@ -32,7 +32,7 @@ class Agency extends Model
                         'agency_timezone AS timezone',
                         'agency_fare_url AS fare_url',
                         'agency_branding_url AS branding_url')
-                ->where('id', $data['id'])
+                ->where('id', $id)
                 ->orderBy('id', 'asc')
                 ->take(1)
                 ->get();

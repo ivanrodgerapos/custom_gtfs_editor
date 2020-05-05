@@ -8,4 +8,4 @@
     1. Open terminal
     2. Go to root directory of the project
     3. run 'cp .env.example .env'
-    4. run 'artisan key:generate'
+    4. run 'php artisan key:generate'

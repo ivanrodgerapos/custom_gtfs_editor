@@ -44,3 +44,9 @@ Route::get('Route/fetch_by_id', 'Routes@get_by_id');
 Route::get('Route/fetch_all', 'Routes@get_all');
 Route::post('Route/create', 'Routes@add');
 Route::post('Route/edit', 'Routes@update_by_id');
+
+//Shapes Controller
+Route::get('Shape/fetch_by_id', 'Shapes@get_by_id');
+Route::get('Shape/fetch_all', 'Shapes@get_all');
+Route::post('Shape/create', 'Shapes@add');
+Route::post('Shape/edit', 'Shapes@update_by_id');

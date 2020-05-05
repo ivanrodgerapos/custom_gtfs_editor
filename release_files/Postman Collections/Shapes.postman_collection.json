@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "b6ccfbf9-1913-4f42-b810-f6eb900d4a26",
+		"name": "Shapes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Shape",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "50a08b1b-e2b2-484c-9cc3-e9a92549e526",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "name",
+						"value": "Webster",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "shape",
+							"value": "00918621-4944-4a78-a483-e46d6b6e3ac0",
+							"type": "text"
+						},
+						{
+							"key": "distance_traveled",
+							"value": "0.0000000",
+							"type": "text"
+						},
+						{
+							"key": "point_sequence",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "point_longitude",
+							"value": "123.9037550",
+							"type": "text"
+						},
+						{
+							"key": "point_latitude",
+							"value": "10.2956550",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Shape/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Shape",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Shape",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "shape",
+							"value": "00918621-4944-4a78-a483-e46d6b6e3ac0",
+							"type": "text"
+						},
+						{
+							"key": "distance_traveled",
+							"value": "0.0000000",
+							"type": "text"
+						},
+						{
+							"key": "point_sequence",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "point_longitude",
+							"value": "123.9037551",
+							"type": "text"
+						},
+						{
+							"key": "point_latitude",
+							"value": "10.2956550",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Shape/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Shape",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Shape",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Shape/fetch_all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Shape",
+						"fetch_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Shape By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Shape/fetch_by_id?id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Shape",
+						"fetch_by_id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

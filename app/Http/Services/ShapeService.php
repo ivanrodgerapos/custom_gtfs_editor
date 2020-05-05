@@ -2,16 +2,16 @@
 namespace App\Http\Services;
 
 use Illuminate\Http\Request;
-use App\Models\Route;
+use App\Models\Shape;
 use Exception;
 
-class RouteService
+class ShapeService
 {
-    public static function add_route($request) {
+    public static function add_shape($request) {
         $data = $request->input();
 
         try {
-            $result = Route::instance()->add($data);
+            $result = Shape::instance()->add($data);
             $data = $result ? "Success" : "Failed";
         }
         catch (Exception $e) {
@@ -21,14 +21,14 @@ class RouteService
         return $data;
     }
 
-    public static function get_route_by_id ($request) {
+    public static function get_shape_by_id ($request) {
         $id = $request->input('id');
 
         try {
-            $record_exists = self::check_route_exists($id);
+            $record_exists = self::check_shape_exists($id);
 
             if ($record_exists) {
-                $result = Route::instance()->get_by_id($id);
+                $result = Shape::instance()->get_by_id($id);
                 $data = $result ? $result : "Failed";
             }
             else {
@@ -42,9 +42,9 @@ class RouteService
         return $data;
     }
 
-    public static function get_all_route () {
+    public static function get_all_shape () {
         try {
-            $result = Route::instance()->get_all();
+            $result = Shape::instance()->get_all();
             $data = $result ? $result : "Failed";
         }
         catch (Exception $e) {
@@ -54,16 +54,16 @@ class RouteService
         return $data;
     }
 
-    public static function update_route_by_id ($request) {
+    public static function update_shape_by_id ($request) {
         $data = $request->input();
         $has_req = $request->has('id');
         $id = isset($data['id']) ? $data['id'] : '0';
 
         try {
-            $record_exists = self::check_route_exists($id);
+            $record_exists = self::check_shape_exists($id);
 
             if ($record_exists) {
-                $result = Route::instance()->update_route_by_id($data);
+                $result = Shape::instance()->update_shape_by_id($data);
                 $data = $result ? "Success" : "Failed";
             }
             else {
@@ -78,7 +78,7 @@ class RouteService
         return $data;
     }
 
-    private static function check_route_exists ($id) {
-        return Route::instance()->check_if_route_exists($id);
+    private static function check_shape_exists ($id) {
+        return Shape::instance()->check_if_shape_exists($id);
     }
 }

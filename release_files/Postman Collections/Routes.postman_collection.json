@@ -1,0 +1,263 @@
+{
+	"info": {
+		"_postman_id": "d7e1d132-fb24-476c-b511-bae26ae63534",
+		"name": "Routes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Route",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "50a08b1b-e2b2-484c-9cc3-e9a92549e526",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "name",
+						"value": "Webster",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "agency",
+							"value": "LTFRB",
+							"type": "text"
+						},
+						{
+							"key": "route",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "short_name",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "long_name",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "desc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "112F95",
+							"type": "text"
+						},
+						{
+							"key": "text_color",
+							"value": "000000",
+							"type": "text"
+						},
+						{
+							"key": "branding_url",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Route/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Route",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Route",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "agency",
+							"value": "LTFRBDE",
+							"type": "text"
+						},
+						{
+							"key": "route",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "short_name",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "long_name",
+							"value": "01C",
+							"type": "text"
+						},
+						{
+							"key": "desc",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "112F95",
+							"type": "text"
+						},
+						{
+							"key": "text_color",
+							"value": "000000",
+							"type": "text"
+						},
+						{
+							"key": "branding_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Route/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Route",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Route",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Route/fetch_all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Route",
+						"fetch_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Route By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Route/fetch_by_id?id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Route",
+						"fetch_by_id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

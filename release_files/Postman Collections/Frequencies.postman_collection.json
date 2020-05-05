@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "35561ef0-bdcd-453f-8881-22c66f076736",
+		"name": "Frequencies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Frequency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "50a08b1b-e2b2-484c-9cc3-e9a92549e526",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					},
+					{
+						"key": "name",
+						"value": "Webster",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "trip",
+							"value": "inb01c",
+							"type": "text"
+						},
+						{
+							"key": "time_start",
+							"value": "00:00:00",
+							"type": "text"
+						},
+						{
+							"key": "time_end",
+							"value": "23:59:59",
+							"type": "text"
+						},
+						{
+							"key": "headway",
+							"value": "600",
+							"type": "text"
+						},
+						{
+							"key": "exact_time",
+							"value": "0",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Frequency/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Frequency",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Frequency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "trip",
+							"value": "inb01cd",
+							"type": "text"
+						},
+						{
+							"key": "time_start",
+							"value": "00:00:00",
+							"type": "text"
+						},
+						{
+							"key": "time_end",
+							"value": "23:59:59",
+							"type": "text"
+						},
+						{
+							"key": "headway",
+							"value": "600",
+							"type": "text"
+						},
+						{
+							"key": "exact_time",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "4",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Frequency/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Frequency",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Frequency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Frequency/fetch_all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Frequency",
+						"fetch_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Frequency By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Frequency/fetch_by_id?id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Frequency",
+						"fetch_by_id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

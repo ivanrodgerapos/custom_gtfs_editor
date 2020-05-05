@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "a24ce78a-4bb9-4678-87cb-7784bb6c4349",
+		"name": "Agencies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Agency",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "50a08b1b-e2b2-484c-9cc3-e9a92549e526",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "LTFRB",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "LTFRB",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "http://www.ltfrb.gov.p",
+							"type": "text"
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Manila",
+							"type": "text"
+						},
+						{
+							"key": "fare_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "branding_url",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Agency/create",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Agency",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Agency",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "agency",
+							"value": "LTFRBEE",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "LTFRBEES",
+							"type": "text"
+						},
+						{
+							"key": "url",
+							"value": "http://www.ltfrb.gov.p",
+							"type": "text"
+						},
+						{
+							"key": "lang",
+							"value": "en",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "timezone",
+							"value": "Asia/Manila",
+							"type": "text"
+						},
+						{
+							"key": "fare_url",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "branding_url",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Agency/edit",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Agency",
+						"edit"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Agency By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Agency/fetch_by_id?id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Agency",
+						"fetch_by_id"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Agency",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/Agency/fetch_all",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"Agency",
+						"fetch_all"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

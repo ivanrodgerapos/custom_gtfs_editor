@@ -6,8 +6,22 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 use App\Models\Agency;
 
-class GTFSRoutesController extends Controller
+class Stops extends Controller
 {
+    /**
+     * Generate GTFS stops.txt specification
+     *
+     * Controller - generates stops based on Mapbox API Reverse geocoding
+     * Reference: https://docs.mapbox.com/api/search/#reverse-geocoding
+     *
+     * @since 05.06.2020
+     *
+     * @see Function/method/class relied on
+     * @link baseurl/api/generate_stops
+     *
+     * @param Object $request Description.
+     * @return type Description.
+     */
     function generate_stops(Request $request) {
         try {
             $input_json = (array) json_decode(json_decode($request->input('features')));

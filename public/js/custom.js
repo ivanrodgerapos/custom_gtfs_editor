@@ -77,8 +77,7 @@ $(document).ready(function(){
                 dataType: 'json',
                 data: data.features,
                 success: function(response) {
-                    var data = JSON.stringify(response.data, undefined, 4);
-                    console.log(data)
+                    var data = JSON.stringify(response.data.original);
                     $('#output').val(data);
                     $('#modal-loading').modal('hide');
                 }

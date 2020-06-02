@@ -9,10 +9,10 @@ class GTFSRoutesController extends Controller
 {
     function generate_stops(Request $request) {
         try {
+            // geojson input
             $input_json = $request->input();
             $features = $input_json['features'];
             $coordinates = $features[0]['geometry']['coordinates'];
-            // return $coordinates;
             $endpoint = config('mapboxApi.endpoint.geocoding');
             $stops = [];
             $index = 0;
@@ -25,6 +25,7 @@ class GTFSRoutesController extends Controller
                 $index++;
             }
 
+
             $response = ['status' => 'OK', 'code' => '200', 'data' => response()->json($stops)];
         }
         catch (Exception $e) {
@@ -35,19 +36,24 @@ class GTFSRoutesController extends Controller
     }
 
     private function genereate_stop_data_arr($geolocation) {
-        $data = [];
-        $data['stop_id'] = $geolocation['features'][0]['id'];
-        $data['stop_code'] = "";
-        $data['stop_name'] = $geolocation['features'][0]['place_name'];
-        $data['stop_desc'] = "";
-        $data['stop_lat'] = $geolocation['query'][1];
-        $data['stop_lon'] = $geolocation['query'][0];
-        $data['zone_id'] = "";
-        $data['stop_url'] = "";
-        $data['location_type'] = 0;
-        $data['parent_station'] = "";
-        $data['stop_timezone'] = "";
-        $data['wheelchair_boarding'] = "";
+        $stop_id = $geolocation['features'][0]['id'];
+        $stop_code = "";
+        $stop_name = $geolocation['features'][0]['place_name'];
+        $stop_desc = "";
+        $stop_lat = $geolocation['query'][1];
+        $stop_lon = $geolocation['query'][0];
+        $zone_id = "";
+        $stop_url = "";
+        $location_type = 0;
+        $parent_station = "";
+        $stop_timezone = "";
+        $wheelchair_boarding = "";
+
+        $data = $stop_id.','.$stop_code.','.$stop_name.','.$stop_desc 
+                .','.$stop_lat.','.$stop_lon.','.$zone_id.','.$stop_url 
+                .','.$location_type.','.$parent_station.','.$stop_timezone
+                .','.$wheelchair_boarding;
+                
         return $data;
     }
 

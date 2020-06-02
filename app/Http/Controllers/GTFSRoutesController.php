@@ -8,35 +8,27 @@ use Illuminate\Support\Facades\Http;
 class GTFSRoutesController extends Controller
 {
     function generate_stops(Request $request) {
-        try {
-            // geojson input
-            $input_json = $request->input();
-            $features = $input_json['features'];
-            $coordinates = $features[0]['geometry']['coordinates'];
-            $endpoint = config('mapboxApi.endpoint.geocoding');
-            $stops = [];
-            $index = 0;
-            
-            foreach ($coordinates as $stop) {
-                $longitude = $stop[0];
-                $latitude = $stop[1];
-                $geolocation = $this->sendApiRequest($endpoint, $longitude, $latitude);
-                $stops[$index] = $this->genereate_stop_data_arr($geolocation);
-                $index++;
-            }
-
-
-            $response = ['status' => 'OK', 'code' => '200', 'data' => response()->json($stops)];
-        }
-        catch (Exception $e) {
-            $response = ['status' => 'OK', 'code' => '200', 'data' => $e->getMessage()];
+        // geojson input
+        $input_json = $request->input();
+        $features = $input_json['features'];
+        $coordinates = $features[0]['geometry']['coordinates'];
+        $endpoint = config('mapboxApi.endpoint.geocoding');
+        $stops = [];
+        $index = 0;
+        
+        foreach ($coordinates as $stop) {
+            $longitude = $stop[0];
+            $latitude = $stop[1];
+            $geolocation = $this->sendApiRequest($endpoint, $longitude, $latitude);
+            $stops[$index] = $this->genereate_stop_data_arr($geolocation);
+            $index++;
         }
         
-        return json_encode($response);
+        return response()->json($stops);
     }
 
     private function genereate_stop_data_arr($geolocation) {
-        $stop_id = $geolocation['features'][0]['id'];
+        $stop_id = uniqid();
         $stop_code = "";
         $stop_name = $geolocation['features'][0]['place_name'];
         $stop_desc = "";

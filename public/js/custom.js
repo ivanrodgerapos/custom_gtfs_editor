@@ -77,8 +77,12 @@ $(document).ready(function(){
                 dataType: 'json',
                 data: data.features,
                 success: function(response) {
-                    var data = JSON.stringify(response.data.original);
-                    $('#output').val(data);
+                    var output = '';
+                    console.log(response)
+                    for (var row in response) {
+                        output += (response[row]) + '\n'
+                    }
+                    $('#output').val(output);
                     $('#modal-loading').modal('hide');
                 }
             });

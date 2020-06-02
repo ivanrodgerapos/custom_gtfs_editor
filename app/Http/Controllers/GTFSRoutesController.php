@@ -9,13 +9,14 @@ class GTFSRoutesController extends Controller
 {
     function generate_stops(Request $request) {
         try {
-            $input_json = (array) json_decode(json_decode($request->input('features')));
+            $input_json = $request->input();
             $features = $input_json['features'];
-            $geometry = $features[0]->geometry;
-            $coordinates = $geometry->coordinates;
+            $coordinates = $features[0]['geometry']['coordinates'];
+            // return $coordinates;
             $endpoint = config('mapboxApi.endpoint.geocoding');
             $stops = [];
             $index = 0;
+            
             foreach ($coordinates as $stop) {
                 $longitude = $stop[0];
                 $latitude = $stop[1];

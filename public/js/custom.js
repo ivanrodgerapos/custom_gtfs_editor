@@ -67,17 +67,18 @@ $(document).ready(function(){
         button_clicked('#btn-generate-output', function(){
             $('#modal-loading').modal('show');
             var data = {
-                features: JSON.stringify($('#raw-data').val())
+                features: JSON.parse($('#raw-data').val())
             }
-    
+            
             $.ajax({
                 url: BASE_URL + '/api/generate_stops',
                 async: true,
-                type: 'get',
+                type: 'POST',
                 dataType: 'json',
-                data: data,
+                data: data.features,
                 success: function(response) {
                     var data = JSON.stringify(response.data, undefined, 4);
+                    console.log(data)
                     $('#output').val(data);
                     $('#modal-loading').modal('hide');
                 }

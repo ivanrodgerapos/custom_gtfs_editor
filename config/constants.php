@@ -15,6 +15,12 @@ return [
         'directory_create_success'  => 'Directory successfully created'
     ],
 
+    'Status' => [
+        'active'                    => 1,
+        'inactive'                  => 0,
+        'deleted'                   => -1
+    ],
+
     'AuditTrail' => [
         'actions' => [
             'add'                   => 'Add',
@@ -23,15 +29,15 @@ return [
         ],
 
         'module_names' => [
-            'agencies'              => 'Agency',
-            'audit_trails'          => 'Audit Trail',
-            'calendars'             => 'Calendar',
-            'frequencies'           => 'Frequency',
-            'routes'                => 'Route',
-            'shapes'                => 'Shape',
-            'stop_times'            => 'Stop Time',
-            'stops'                 => 'Stop',
-            'trips'                 => 'Trips'
+            'agency'               => 'Agency',
+            'audit_trail'          => 'Audit Trail',
+            'calendar'             => 'Calendar',
+            'frequencie'           => 'Frequency',
+            'route'                => 'Route',
+            'shape'                => 'Shape',
+            'stop_time'            => 'Stop Time',
+            'stop'                 => 'Stop',
+            'trip'                 => 'Trips'
         ]
     ],
 ];

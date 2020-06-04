@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Agency extends Model
 {
     function add ($data) {
-        $this->agency_id = $data['id'];
+        $this->agency_id = $data['agency'];
         $this->agency_name = $data['name'];
         $this->agency_url = $data['url'];
         $this->agency_lang = $data['lang'];
@@ -23,7 +23,7 @@ class Agency extends Model
     function get_by_id ($id) {
         
         return $this
-                ->select('agency_id AS id',
+                ->select('agency_id AS agency',
                         'agency_name AS name',
                         'agency_url AS url',
                         'agency_lang AS lang',
@@ -40,7 +40,7 @@ class Agency extends Model
 
     function get_all  () {
         return $this
-            ->select('agency_id AS id',
+            ->select('agency_id AS agency',
                     'agency_name AS name',
                     'agency_url AS url',
                     'agency_lang AS lang',

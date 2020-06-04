@@ -3,6 +3,7 @@ namespace App\Http\Services;
 
 use Illuminate\Http\Request;
 use App\Models\Route;
+use App\Helpers\CommonHelper;
 use Exception;
 
 class RouteService
@@ -18,7 +19,7 @@ class RouteService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_route_by_id ($request) {
@@ -32,14 +33,14 @@ class RouteService
                 $data = $result ? $result : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
         }
         catch (Exception $e) {
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_all_route () {
@@ -51,7 +52,7 @@ class RouteService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function update_route_by_id ($request) {
@@ -67,7 +68,7 @@ class RouteService
                 $data = $result ? "Success" : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
             
         }
@@ -75,7 +76,7 @@ class RouteService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     private static function check_route_exists ($id) {

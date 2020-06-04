@@ -3,6 +3,7 @@ namespace App\Http\Services;
 
 use Illuminate\Http\Request;
 use App\Models\Calendar;
+use App\Helpers\CommonHelper;
 use Exception;
 
 class CalendarService 
@@ -18,7 +19,7 @@ class CalendarService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_calendar_by_id ($request) {
@@ -32,14 +33,14 @@ class CalendarService
                 $data = $result ? $result : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
         }
         catch (Exception $e) {
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_all_calendar () {
@@ -51,7 +52,7 @@ class CalendarService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function update_calendar_by_id ($request) {
@@ -67,7 +68,7 @@ class CalendarService
                 $data = $result ? "Success" : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
             
         }
@@ -75,7 +76,7 @@ class CalendarService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     private static function check_calendar_exists ($id) {

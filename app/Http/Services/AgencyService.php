@@ -3,6 +3,7 @@ namespace App\Http\Services;
 
 use Illuminate\Http\Request;
 use App\Models\Agency;
+use App\Helpers\CommonHelper;
 use Exception;
 
 class AgencyService 
@@ -17,8 +18,8 @@ class AgencyService
         catch (Exception $e) {
             $data = $e->getMessage();
         }
-
-        return $data;
+        
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_agency_by_id ($request) {
@@ -32,14 +33,14 @@ class AgencyService
                 $data = $result ? $result : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
         } 
         catch (Exception $e) {
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_all_agency () {
@@ -51,7 +52,7 @@ class AgencyService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function update_agency_by_id ($request) {
@@ -66,7 +67,7 @@ class AgencyService
                 $data = $result ? "Success" : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
             
         } 
@@ -74,7 +75,7 @@ class AgencyService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     private static function check_agency_exists ($id) {

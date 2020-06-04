@@ -3,6 +3,7 @@ namespace App\Http\Services;
 
 use Illuminate\Http\Request;
 use App\Models\Shape;
+use App\Helpers\CommonHelper;
 use Exception;
 
 class ShapeService
@@ -18,7 +19,7 @@ class ShapeService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_shape_by_id ($request) {
@@ -32,14 +33,14 @@ class ShapeService
                 $data = $result ? $result : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
         }
         catch (Exception $e) {
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_all_shape () {
@@ -51,7 +52,7 @@ class ShapeService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function update_shape_by_id ($request) {
@@ -67,7 +68,7 @@ class ShapeService
                 $data = $result ? "Success" : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
             
         }
@@ -75,7 +76,7 @@ class ShapeService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     private static function check_shape_exists ($id) {

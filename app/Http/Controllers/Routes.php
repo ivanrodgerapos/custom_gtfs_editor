@@ -3,36 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Helpers\CommonHelper;
 use App\Http\Services\RouteService;
 
 class Routes extends Controller
 {
     // Add
     function add (Request $request) {
-        $response = RouteService::add_route($request);
-        
-        return CommonHelper::responseHelper($response);
+        return RouteService::add_route($request);
     }
 
     // Get By Id
     function get_by_id (Request $request) {
-        $response = RouteService::get_route_by_id($request);
-        
-        return CommonHelper::responseHelper($response);
+        return RouteService::get_route_by_id($request);
     }
 
     // Get All
     function get_all () {
-        $response = RouteService::get_all_route();
-
-        return CommonHelper::responseHelper($response);
+        return RouteService::get_all_route();
     }
 
     // Update
     function update_by_id(Request $request) {
-        $response = RouteService::update_route_by_id($request);
-
-        return CommonHelper::responseHelper($response);
+        return RouteService::update_route_by_id($request);
     }
 }

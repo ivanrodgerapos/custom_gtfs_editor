@@ -3,6 +3,7 @@ namespace App\Http\Services;
 
 use Illuminate\Http\Request;
 use App\Models\Frequency;
+use App\Helpers\CommonHelper;
 use Exception;
 
 class FrequencyService
@@ -18,7 +19,7 @@ class FrequencyService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_frequency_by_id ($request) {
@@ -32,14 +33,14 @@ class FrequencyService
                 $data = $result ? $result : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
         }
         catch (Exception $e) {
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function get_all_frequency () {
@@ -51,7 +52,7 @@ class FrequencyService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     public static function update_frequency_by_id ($request) {
@@ -67,7 +68,7 @@ class FrequencyService
                 $data = $result ? "Success" : "Failed";
             }
             else {
-                $data = "Record does not exist.";
+                $data = CommonHelper::constant('Common.record_not_exist');
             }
             
         }
@@ -75,7 +76,7 @@ class FrequencyService
             $data = $e->getMessage();
         }
 
-        return $data;
+        return CommonHelper::responseHelper($data);
     }
 
     private static function check_frequency_exists ($id) {

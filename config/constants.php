@@ -32,7 +32,7 @@ return [
             'agency'               => 'Agency',
             'audit_trail'          => 'Audit Trail',
             'calendar'             => 'Calendar',
-            'frequencie'           => 'Frequency',
+            'frequency'            => 'Frequency',
             'route'                => 'Route',
             'shape'                => 'Shape',
             'stop_time'            => 'Stop Time',

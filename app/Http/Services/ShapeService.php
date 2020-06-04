@@ -1,8 +1,11 @@
 <?php
 namespace App\Http\Services;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Models\Shape;
+use App\Models\AuditTrail;
+use App\Helpers\AuditTrailHelper;
 use App\Helpers\CommonHelper;
 use Exception;
 
@@ -12,11 +15,22 @@ class ShapeService
         $data = $request->input();
 
         try {
+            $audit_trail = AuditTrail::instance();
+
+            DB::beginTransaction();
+
+            $audit_trail_data = AuditTrailHelper::format(1,'shape','add', $data);
+
+            $audit_trail->add($audit_trail_data);
+
             $result = Shape::instance()->add($data);
             $data = $result ? "Success" : "Failed";
+            
+            DB::commit();
         }
         catch (Exception $e) {
             $data = $e->getMessage();
+            DB::rollBack();
         }
 
         return CommonHelper::responseHelper($data);
@@ -64,8 +78,21 @@ class ShapeService
             $record_exists = self::check_shape_exists($id);
 
             if ($record_exists) {
+                $audit_trail = AuditTrail::instance();
+
+                DB::beginTransaction();
+
+                $old_data =  Shape::instance()->get_by_id($id)[0];
+
                 $result = Shape::instance()->update_shape_by_id($data);
+                
+                unset($data['id']);
+                $audit_trail_data = AuditTrailHelper::format(1,'shape','update', $data, $old_data);
+                $audit_trail->add($audit_trail_data);
+
                 $data = $result ? "Success" : "Failed";
+                
+                DB::commit();
             }
             else {
                 $data = CommonHelper::constant('Common.record_not_exist');
@@ -74,6 +101,7 @@ class ShapeService
         }
         catch (Exception $e) {
             $data = $e->getMessage();
+            DB::rollBack();
         }
 
         return CommonHelper::responseHelper($data);

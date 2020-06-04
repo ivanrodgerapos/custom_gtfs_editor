@@ -35,6 +35,8 @@ class CreateAgenciesTable extends Migration
             // agency_branding_url
             $table->string('agency_branding_url')->nullable();
             // timestamps
+
+            $table->integer('status');
             $table->timestamps();
         });
     }

@@ -40,6 +40,8 @@ class CreateStopsTable extends Migration
             // wheelchair_boarding
             $table->string('wheelchair_boarding')->nullable();
             // timestapms
+            
+            $table->integer('status');
             $table->timestamps();
         });
     }

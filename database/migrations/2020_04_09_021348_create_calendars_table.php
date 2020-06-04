@@ -36,6 +36,8 @@ class CreateCalendarsTable extends Migration
             // end_date
             $table->string('end_date', 25);
             // timestamps
+            
+            $table->integer('status');
             $table->timestamps();
         });
     }

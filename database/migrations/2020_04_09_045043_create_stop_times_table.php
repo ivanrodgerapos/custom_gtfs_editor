@@ -36,6 +36,8 @@ class CreateStopTimesTable extends Migration
             // stop_id
             $table->string('stop_id', 25)->nullable();
             // timestamps
+            
+            $table->integer('status');
             $table->timestamps();
         });
     }

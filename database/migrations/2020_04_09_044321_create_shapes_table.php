@@ -26,6 +26,8 @@ class CreateShapesTable extends Migration
             // shape_pt_lat
             $table->double('shape_pt_lat', 11, 8);
             // timestamps
+            
+            $table->integer('status');
             $table->timestamps();
         });
     }

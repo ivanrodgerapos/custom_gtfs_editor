@@ -36,6 +36,8 @@ class CreateTripsTable extends Migration
             // service_id
             $table->string('service_id')->nullable();
             // timestamps
+            
+            $table->integer('status');
             $table->timestamps();
         });
     }

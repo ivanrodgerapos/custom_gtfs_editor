@@ -36,6 +36,8 @@ class CreateRoutesTable extends Migration
             // route_branding_url
             $table->string('route_branding_url')->nullable();
             // timestamps
+            
+            $table->integer('status');
             $table->timestamps();
         });
     }

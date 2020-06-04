@@ -26,6 +26,8 @@ class CreateFrequenciesTable extends Migration
             // exact_times
             $table->bigInteger('exact_times');
             // timestamps
+            
+            $table->integer('status');
             $table->timestamps();
         });
     }
